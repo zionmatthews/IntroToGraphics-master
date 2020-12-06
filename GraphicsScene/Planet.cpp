@@ -12,7 +12,9 @@ Planet::Planet(glm::vec3 position, glm::quat rotation, glm::vec3 scale)
 	m_scale = scale;
 }
 
-// Loads the mesh
+/**
+* Loads the mesh
+*/
 bool Planet::start()
 {
 	//Load sun texture
@@ -26,7 +28,9 @@ bool Planet::start()
 	return true;
 }
 
-//draws the mesh and texture
+/**
+* draws the mesh and texture
+*/
 bool Planet::draw()
 {
 	//Bind texture

@@ -4,7 +4,9 @@
 * Creates  mesh
 */ 
 
-//Constucter
+/**
+*Constucter
+*/
 Mesh::~Mesh()
 {
 	glDeleteVertexArrays(1, &m_vao);
@@ -12,7 +14,9 @@ Mesh::~Mesh()
 	glDeleteBuffers(1, &m_ibo);
 }
 
-
+/**
+*inisializes the mesh
+*/
 void Mesh::initialize(
 	unsigned int vertexCount, const Vertex* vertices,
 	unsigned int indexCount, unsigned int* indices)
@@ -105,7 +109,9 @@ void Mesh::initialize(
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 }
 
-//Quad
+/**
+* initializes the Quad(gives it the shape)
+*/
 void Mesh::initializeQuad()
 {
 	//Define 4 vertices for 2 triangles
@@ -140,7 +146,9 @@ void Mesh::initializeQuad()
 	initialize(4, vertices, 6, indices);
 }
 
-//Cube
+/**
+* initializes the Cube(gives it the shape)
+*/
 void Mesh::initializeCube()
 {
 	//Define 8 vertices for 12 triangles
@@ -205,7 +213,9 @@ void Mesh::initializeCube()
 	initialize(8, vertices, 36, indices);
 }
 
-//Draws any of the functions above
+/**
+* Draws any of the functions above
+*/
 void Mesh::draw()
 {
 	glBindVertexArray(m_vao);
