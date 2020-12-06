@@ -6,14 +6,21 @@ using glm::vec3;
 using glm::vec4;
 using glm::mat4;
 
+/**
+* Everything is placed in here to builed the scene
+*/
+
+//Constructer
 Game::Game()
 {
 }
 
+//Constructer
 Game::~Game()
 {
 }
 
+//Start of the loop
 int Game::run() 
 {
 	bool running = true;
@@ -42,6 +49,7 @@ int Game::run()
 	return 0;
 }
 
+//runs the window,shader, and all gizmos
 bool Game::start()
 {
 	//Initialize GLFW
@@ -133,6 +141,7 @@ bool Game::start()
 	return true;
 }
 
+//Updates the game loop
 bool Game::update(double deltaTime)
 {
 	glfwPollEvents();
@@ -151,6 +160,7 @@ bool Game::update(double deltaTime)
 	return true;
 }
 
+//Draws everything into the scene
 bool Game::draw()
 {
 	//Clear the window
@@ -219,6 +229,7 @@ bool Game::draw()
 	return true;
 }
 
+//deletes and end the program
 bool Game::end()
 {
 	//Destroy the Gizmos

@@ -1,12 +1,17 @@
 #include "Mesh.h"
 #include <gl_core_4_4.h>
+/**
+* Creates  mesh
+*/ 
 
+//Constucter
 Mesh::~Mesh()
 {
 	glDeleteVertexArrays(1, &m_vao);
 	glDeleteBuffers(1, &m_vbo);
 	glDeleteBuffers(1, &m_ibo);
 }
+
 
 void Mesh::initialize(
 	unsigned int vertexCount, const Vertex* vertices,
@@ -100,6 +105,7 @@ void Mesh::initialize(
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 }
 
+//Quad
 void Mesh::initializeQuad()
 {
 	//Define 4 vertices for 2 triangles
@@ -134,6 +140,7 @@ void Mesh::initializeQuad()
 	initialize(4, vertices, 6, indices);
 }
 
+//Cube
 void Mesh::initializeCube()
 {
 	//Define 8 vertices for 12 triangles
@@ -198,6 +205,7 @@ void Mesh::initializeCube()
 	initialize(8, vertices, 36, indices);
 }
 
+//Draws any of the functions above
 void Mesh::draw()
 {
 	glBindVertexArray(m_vao);

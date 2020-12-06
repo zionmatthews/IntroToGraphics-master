@@ -1,0 +1,60 @@
+{\itshape N\+O\+TE\+: This project is no longer being actively maintained}
+
+The base project code used for the Advanced Diploma of Professional Game Development to aid in graphical real-\/time applications.
+
+Bootstrap is a static library that can be linked against to implement real-\/time graphical applications with Open\+GL as the base A\+PI.
+
+To build and run projects ensure that Bootstrap is the first project built, and ensure you have set the Working Directory to the bin folder, i.\+e. {\bfseries{\char`\"{}\$(\+Solution\+Dir)bin\textbackslash{}\char`\"{}}}.
+
+Provided is V\+S2015 project templates that can create a basic 2D project, and another for a 3D project. These are within the Tools sub-\/folder as .zip files. Add these to your Visual Studio Project Template directory, i.\+e {\bfseries{\char`\"{}\+C\+:/\+Users/$<$i$>$username$<$/i$>$/\+Documents/\+Visual Studio 2015/\+Templates/\+Project\+Templates/\+Visual C++ Project/\char`\"{}}}.
+
+Alternatively, to create an application simply derive from the {\ttfamily aie\+::\+Application} class like so\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ \{c++\}}
+\DoxyCodeLine{class MyApplication : public aie::Application \{}
+\DoxyCodeLine{public:}
+\DoxyCodeLine{}
+\DoxyCodeLine{    MyApplication();}
+\DoxyCodeLine{    virtual \string~MyApplication();}
+\DoxyCodeLine{}
+\DoxyCodeLine{    virtual bool startup();}
+\DoxyCodeLine{    virtual void shutdown();}
+\DoxyCodeLine{}
+\DoxyCodeLine{    virtual void update(float deltaTime);}
+\DoxyCodeLine{    virtual void draw();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\};}
+\end{DoxyCode}
+
+
+Then implement a {\ttfamily main()} function to create an instance of your application\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ \{c++\}}
+\DoxyCodeLine{int main() \{}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    auto app = new MyApplication();}
+\DoxyCodeLine{    // window title, dimensions and if it is fullscreen}
+\DoxyCodeLine{    app-\/>run("AIE", 1280, 720, false);}
+\DoxyCodeLine{    delete app;}
+\DoxyCodeLine{}
+\DoxyCodeLine{    return 0;}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+
+
+The {\ttfamily run()} method implements a game loop that executes in the following manner\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{if startup() is true then}
+\DoxyCodeLine{  while quit is false}
+\DoxyCodeLine{    update()}
+\DoxyCodeLine{    draw()}
+\DoxyCodeLine{shutdown()}
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md1}{}\doxysection{Tutorial Videos}\label{md__r_e_a_d_m_e_autotoc_md1}
+{\bfseries{Creating your Git Repo using aie\+Bootstrap}}
+
+\href{https://vimeo.com/213005085/3609374652}{\texttt{ }}
+
+{\bfseries{Getting Started with aie\+Bootstrap}}
+
+\href{https://vimeo.com/213607377/77c8867175}{\texttt{ }} 

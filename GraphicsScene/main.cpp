@@ -1,6 +1,8 @@
 #include <gl_core_4_4.h>
 #include "Game.h"
-
+/**
+* Where the game loop starts
+*/
 
 int main() 
 {

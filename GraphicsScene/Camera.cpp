@@ -1,4 +1,7 @@
 #include "Camera.h"
+/**
+*  Creates the camera and camera controls 
+*/
 
 glm::mat4 Camera::getViewMatrix()
 {
@@ -22,26 +25,29 @@ glm::mat4 Camera::getProjectionMatrix(float width, float height)
 		0.1f, 1000.0f);
 }
 
+//Gets the yaw
 float Camera::getYaw()
 {
 	return m_yaw;
 }
-
+//sets the yaw
 void Camera::setYaw(float degrees)
 {
 	m_yaw = degrees;
 }
 
+//gets the pitch
 float Camera::getPitch()
 {
 	return m_pitch;
 }
-
+//sets the pitch
 void Camera::setPitch(float degrees)
 {
 	m_pitch = degrees;
 }
 
+//updates the camera with user input
 bool Camera::update(double deltaTime) 
 {
 	int keyForward = GLFW_KEY_W;

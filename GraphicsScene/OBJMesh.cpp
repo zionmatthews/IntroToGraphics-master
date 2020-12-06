@@ -4,7 +4,9 @@
 
 #define TINYOBJLOADER_IMPLEMENTATION
 #include "tiny_obj_loader.h"
-
+/**
+* Creates any 3d mesh 
+*/
 namespace aie {
 
 	OBJMesh::~OBJMesh() {
@@ -14,7 +16,6 @@ namespace aie {
 			glDeleteBuffers(1, &c.ibo);
 		}
 	}
-
 	bool OBJMesh::load(const char* filename, bool loadTextures /* = true */, bool flipTextureV /* = false */) {
 
 		if (m_meshChunks.empty() == false) {
